@@ -3,3 +3,7 @@ Here is memo about csv files
 
 Please note file's description.
 (file name) : description
+
+
+Paris_loyer.csv : 파리 임대료 데이터 원본
+Paris_loyer_prep.csv : 파리 임대료 데이터 + 파리 카페 개수 전처리 완료
