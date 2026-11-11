@@ -3,7 +3,7 @@ Week 2 - A: 시뮬레이션 통합 (예지)
 1주차 몬테카를로 뼈대 + 깃허브 Paris_data.csv 
 
 - 데이터는 깃허브에서 바로 읽어옴
-- TARGET_ARRONDISSEMENTS 에 B(하린)가 정한 타겟 구 번호만 넣으면 됨
+- 타겟 구: 하린 K-Means Cluster 2 결과 반영 (12, 13, 14, 15, 18, 19, 20구)
 - 결과: 구별 BEP 판매량 + 흑자 전환 확률(bep_probability)
 """
 
@@ -13,15 +13,15 @@ import pandas as pd
 DATA_URL = ("https://raw.githubusercontent.com/discount63/financier/main/"
             "csv_files/Paris_data.csv")
 
-# B(하린)가 알려준 타겟 상권 -> 여기만 바꾸면 됨
-TARGET_ARRONDISSEMENTS = [13, 19]
+# 하린 K-Means 결과 Cluster 2(Target) 구역 (csv_files/Paris_data_with_clusters.csv)
+TARGET_ARRONDISSEMENTS = [12, 13, 14, 15, 18, 19, 20]
 
 # ------------------------------------------------------------------
 # 1. 가정값 (EUR) - 팀 합의 후 숫자만 수정
 # ------------------------------------------------------------------
 A = {
     # 잔당
-    "price": 1.50,
+    "price": 2.00,              # 판매가 (2유로 확정)
     "vat_rate": 0.055,          # 프랑스 테이크아웃 부가세 (확인 필요)
     "bean": 0.20, "cup": 0.12, "other": 0.08,
     "card_fee": 0.02,
